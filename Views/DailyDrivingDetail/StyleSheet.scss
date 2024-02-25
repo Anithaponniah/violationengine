@@ -1,0 +1,65 @@
+﻿.driver-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    
+}
+.bold-text {
+    font-weight: bold;
+}
+.input-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select.input-control {
+    height: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.warning-message {
+    background-color: #ffe066; /* Yellow background */
+    color: #c88f0a; /* Dark yellow text */
+    border: 1px solid #c88f0a; /* Dark yellow border */
+    padding: 10px; /* Padding around the message */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Margin at the bottom to separate messages */
+}
+
+.warning-message p {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* Example style for warning icon */
+.warning-message::before {
+    content: "⚠"; /* Warning icon (exclamation mark) */
+    font-size: 20px;
+    margin-right: 5px; /* Spacing between icon and text */
+}

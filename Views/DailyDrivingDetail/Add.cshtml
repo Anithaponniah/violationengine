@@ -1,0 +1,45 @@
+﻿@using CheckDrivingDetails.Controllers;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var result = ViewBag.result;
+}
+@model CheckDrivingDetails.Models.DailyDrivingViewModel
+<form method="post" class="driver-form">
+    <div class="form-group">
+        <label for="driverId">Sjåfør Id:</label>
+        <input type="text" id="driverId" name="Id" required asp-for="Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="driverName">Sjåfør Name:</label>
+        <input type="text" id="driverName" name="DriverName" required asp-for="DriverName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="takingBreak">Pause tid (timer):</label>
+        <input type="number" step="0.01" id="takingBreak" name="TimeBreak" required asp-for="TimeBreak" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="drivingTime">kjøretid (timer):</label>
+        <input type="number" id="drivingTime" step="0.01" name="DrivingTime" required asp-for="DrivingTime" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="BreakState">Pausestatus</label>
+        <select asp-for="BreakState" class="form-control">
+            <option value="">Velg Pausestatus</option>
+            @foreach (var item in Enum.GetValues(typeof(BreakState)))
+            {
+                <option value="@item">@item.ToString()</option>
+            }
+        </select>
+        <span asp-validation-for="BreakState" class="text-danger"></span>
+    </div>
+    <div class="warning-message">
+        <p>@result</p>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">sjekk brudd</button>
+    </div>
+</form>
+
